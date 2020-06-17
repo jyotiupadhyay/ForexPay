@@ -68,11 +68,21 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<scm>
+           <connection>scm:https://github.com/jyotiupadhyay/ForexPay.git</connection>
+           <url>https://github.com/jyotiupadhyay/ForexPay.git</url>
+           <developerConnection>scm:git:https://github.com/jyotiupadhyay/ForexPay.git</developerConnection>
+           <tag>1.1</tag>
+        </scm>
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
 			<url>http://172.31.34.236:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
+		 <repository>
+                         <id>nexus</id>
+                         <url>http://172.31.34.236:8081/nexus/content/repositories/releases</url>
+                  </repository>
 	</distributionManagement>
 
 	<build>
