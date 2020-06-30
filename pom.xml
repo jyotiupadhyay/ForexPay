@@ -73,10 +73,6 @@
            <tag>1.1</tag>
         </scm>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>nexus</id>
-			<url>http://172.31.25.143:8081/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
 		<repository>
                          <id>nexus</id>
                          <url>http://172.31.25.143:8081/nexus/content/repositories/releases</url>
