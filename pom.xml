@@ -26,9 +26,9 @@
 		</sonar.coverage.exclusions>
 	</properties>
 	<scm>
-       <connection>scm:https://github.com/jyotiupadhyay/.git</connection>
-       <url>https://github.com/jyotiupadhyay/maven-multi-module-example.git</url>
-       <developerConnection>scm:git:https://github.com/jyotiupadhyay/maven-multi-module-example.git</developerConnection>
+       <connection>scm:https://github.com/jyotiupadhyay/ForexPay.git</connection>
+       <url>https://github.com/jyotiupadhyay/ForexPay.git</url>
+       <developerConnection>scm:git:https://github.com/jyotiupadhyay/ForexPay.git</developerConnection>
       <tag>rel-1.1</tag>
   </scm>
 
@@ -82,12 +82,15 @@
 
 	</dependencies>
 	<distributionManagement>
-		 <repository>
-                   <id>nexus</id>
-                   <url>http://3.16.25.62:8081/nexus/content/repositories/releases</url>
-                 </repository>
-	</distributionManagement>
-
+   <snapshotRepository>
+      <id>nexus</id>
+      <url>http://3.128.181.7:8081/nexus/content/repositories/snapshots</url>
+   </snapshotRepository>
+   <repository>
+      <id>nexus</id>
+      <url>http://3.128.181.7:8081/nexus/content/repositories/releases</url>
+   </repository>
+</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
