@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.squad</groupId>
 	<artifactId>ForexPay</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>ForexPay</name>
 	<description>Money Transfer project for Spring Boot</description>
 
@@ -82,11 +82,11 @@
 	<distributionManagement>
    <snapshotRepository>
       <id>nexus</id>
-      <url>http://3.128.181.7:8081/nexus/content/repositories/snapshots</url>
+      <url>http://3.128.131.172:8081/nexus/content/repositories/snapshots</url>
    </snapshotRepository>
    <repository>
       <id>nexus</id>
-      <url>http://3.128.181.7:8081/nexus/content/repositories/releases</url>
+      <url>http://3.128.131.172:8081/nexus/content/repositories/releases</url>
    </repository>
 </distributionManagement>
 	<build>
