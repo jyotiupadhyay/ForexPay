@@ -142,6 +142,7 @@
 	            <localCheckout>true</localCheckout>
 	            <tagNameFormat>@{project.version}</tagNameFormat>
 	          </configuration>
+				
 	        </plugin>
 
 
