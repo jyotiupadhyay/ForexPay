@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Constant.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ForexPay</a> &gt; <a href="index.source.html" class="el_package">com.squad.forexpay.constant</a> &gt; <span class="el_source">Constant.java</span></div><h1>Constant.java</h1><pre class="source lang-java linenums">package com.squad.forexpay.constant;
+
+import org.springframework.http.HttpStatus;
+
+public class Constant {
+	
+	private Constant() {
+
+	}
+
+	//Common 
+	public static final String FAILURE_MESSAGE = &quot;FAILURE&quot;;
+	public static final String SUCCESS_MESSAGE = &quot;SUCCESS&quot;;
+	public static final String NO_RECORDS_FOUND = &quot;No Records Found&quot;;
+	public static final String USER_NOT_FOUND = &quot;User not found&quot;;
+	public static final String AUTHENTICATION_SUCCESSFUL = &quot;Authentication Successful&quot;;
+	public static final String AUTHENTICATION_FAILED = &quot;Authentication Failed&quot;;
+	
+	public static final String CREDIT=&quot;CREDIT&quot;;
+	public static final String DEBIT=&quot;DEBIT&quot;;
+<span class="fc" id="L21">	public static final Double MINIMUM_BALANCE=1000D;</span>
+	
+	public static final String TRANSACTION_STATUS_PENDING=&quot;PENDING&quot;;
+	public static final String TRANSACTION_STATUS_CANCELLED=&quot;CANCELLED&quot;;
+	public static final String TRANSACTION_STATUS_SUCCESS=&quot;SUCCESS&quot;;
+
+<span class="fc" id="L27">	public static final Integer AUTHENTICATION_SUCCESSFUL_CODE = HttpStatus.OK.value();</span>
+	public static final String CURRENCY_NOT_FOUND = &quot;Currency not found&quot;;
+	public static final String TRANSACTION_NOT_FOUND = &quot;Transaction not found&quot;;
+	public static final String ACCOUNT_NOT_FOUND = &quot;account not found&quot;;
+
+	public static final String EXCHANGE_API = &quot;https://api.exchangeratesapi.io/latest?base=&quot;;
+	public static final String CURRENCY_CODE_USD = &quot;USD&quot;;
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

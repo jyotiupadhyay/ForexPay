@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ForexPay</a> &gt; <a href="index.source.html" class="el_package">com.squad.forexpay.exception</a> &gt; <span class="el_source">GlobalExceptionHandler.java</span></div><h1>GlobalExceptionHandler.java</h1><pre class="source lang-java linenums">package com.squad.forexpay.exception;
+
+import java.time.LocalDateTime;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import com.squad.forexpay.constant.Constant;
+import com.squad.forexpay.dto.ErrorDto;
+
+
+@ControllerAdvice
+<span class="nc" id="L24">public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {</span>
+
+	@Override
+	protected ResponseEntity&lt;Object&gt; handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+<span class="nc" id="L29">		Map&lt;String, Object&gt; body = new LinkedHashMap&lt;&gt;();</span>
+<span class="nc" id="L30">		body.put(&quot;date&quot;, LocalDateTime.now());</span>
+<span class="nc" id="L31">		body.put(&quot;status&quot;, status.value());</span>
+
+		// Get all errors for field valid
+<span class="nc" id="L34">		List&lt;String&gt; errors = ex.getBindingResult().getFieldErrors().stream().map(FieldError::getDefaultMessage)</span>
+<span class="nc" id="L35">				.collect(Collectors.toList());</span>
+
+<span class="nc" id="L37">		body.put(&quot;errors&quot;, errors);</span>
+<span class="nc" id="L38">		return new ResponseEntity&lt;&gt;(body, headers, HttpStatus.OK);</span>
+	}
+	
+	@ExceptionHandler(UserNotFoundException.class)
+	public ResponseEntity&lt;ErrorDto&gt; userNotFoundException(UserNotFoundException ex) {
+<span class="nc" id="L43">		ErrorDto errorDto = new ErrorDto();</span>
+<span class="nc" id="L44">		errorDto.setMessage(Constant.USER_NOT_FOUND);</span>
+<span class="nc" id="L45">		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());</span>
+<span class="nc" id="L46">		return ResponseEntity.status(HttpStatus.OK).body(errorDto);</span>
+	}
+
+	@ExceptionHandler(CurrencyNotFoundException.class)
+	public ResponseEntity&lt;ErrorDto&gt; currencyNotFoundException(CurrencyNotFoundException ex) {
+<span class="nc" id="L51">		ErrorDto errorDto = new ErrorDto();</span>
+<span class="nc" id="L52">		errorDto.setMessage(Constant.CURRENCY_NOT_FOUND);</span>
+<span class="nc" id="L53">		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());</span>
+<span class="nc" id="L54">		return ResponseEntity.status(HttpStatus.OK).body(errorDto);</span>
+	}
+	
+	@ExceptionHandler(TransactionNotFoundException.class)
+	public ResponseEntity&lt;ErrorDto&gt; transactionNotFoundException(TransactionNotFoundException ex) {
+<span class="nc" id="L59">		ErrorDto errorDto = new ErrorDto();</span>
+<span class="nc" id="L60">		errorDto.setMessage(Constant.TRANSACTION_NOT_FOUND);</span>
+<span class="nc" id="L61">		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());</span>
+<span class="nc" id="L62">		return ResponseEntity.status(HttpStatus.OK).body(errorDto);</span>
+	}
+	
+
+	@ExceptionHandler(MinimumBalanceException.class)
+	public ResponseEntity&lt;ErrorDto&gt; minimumBalanceException(MinimumBalanceException ex) {
+<span class="nc" id="L68">		ErrorDto errorDto = new ErrorDto();</span>
+<span class="nc" id="L69">		errorDto.setMessage(Constant.CURRENCY_NOT_FOUND);</span>
+<span class="nc" id="L70">		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());</span>
+<span class="nc" id="L71">		return ResponseEntity.status(HttpStatus.OK).body(errorDto);</span>
+	}
+	
+	@ExceptionHandler(AccountnotFoundException.class)
+	public ResponseEntity&lt;ErrorDto&gt; accountnotFoundException(AccountnotFoundException ex) {
+<span class="nc" id="L76">		ErrorDto errorDto = new ErrorDto();</span>
+<span class="nc" id="L77">		errorDto.setMessage(Constant.CURRENCY_NOT_FOUND);</span>
+<span class="nc" id="L78">		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());</span>
+<span class="nc" id="L79">		return ResponseEntity.status(HttpStatus.OK).body(errorDto);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

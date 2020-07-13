@@ -1,0 +1,6 @@
+com/squad/forexpay/service/UserServiceTest.class
+com/squad/forexpay/service/AccountServiceTest.class
+com/squad/forexpay/controller/AccountControllerTest.class
+com/squad/forexpay/controller/CurrencyControllerTest.class
+com/squad/forexpay/controller/UserControllerTest.class
+com/squad/forexpay/service/CurrencyServiceTest.class
