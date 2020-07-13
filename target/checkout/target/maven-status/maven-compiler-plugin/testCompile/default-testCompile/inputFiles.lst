@@ -1,6 +1,0 @@
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/service/UserServiceTest.java
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/controller/UserControllerTest.java
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/controller/AccountControllerTest.java
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/service/CurrencyServiceTest.java
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/controller/CurrencyControllerTest.java
-/var/lib/jenkins/workspace/Backend_Deploy/target/checkout/src/test/java/com/squad/forexpay/service/AccountServiceTest.java
