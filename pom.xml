@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.squad</groupId>
 	<artifactId>ForexPay</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>ForexPay</name>
 	<description>Money Transfer project for Spring Boot</description>
 
@@ -124,7 +124,7 @@
 	        		    <artifactId>flyway-maven-plugin</artifactId>
 				    <version>6.3.2</version>
 				    <configuration>
-	                              <url>jdbc:mysql://3.136.97.106:3306</url>
+	                              <url>jdbc:mysql://13.59.157.179:3306</url>
 	                              <user>inguser1</user>
 			              <password>H@ckath0n</password>
 				      <schemas>
